@@ -93,6 +93,9 @@ class smileRecognition():
         
             カメラ画像を表示する
         '''
+        if self.player == 2:
+            cv2.line(img, (round(self.x_res/2), 0), (round(self.x_res/2), self.y_res), (0, 255, 0), thickness=8)
+
         cv2.imshow('img',img)
         # key Operation
         key = cv2.waitKey(5) 
@@ -175,7 +178,6 @@ class smileRecognition():
             img            , ?           , 検出した顔のrectangleが付加されたカメラ画像
             smile_scores   , list of int , 
         '''
-        # TODO: smile scoreを返すよう実装する
         smile_scores = [None, None]
 
         for i, (x,y,w,h) in enumerate(faces):
@@ -210,7 +212,7 @@ class smileRecognition():
             #                     顔領域の切り出しと規格化
             # --------------------------------------------------------------------------------------------------------
             #笑顔識別
-            smiles= self.smile_cascade.detectMultiScale(roi_gray,scaleFactor= 1.1, minNeighbors=0, minSize=(20, 20))
+            smiles= self.smile_cascade.detectMultiScale(roi_gray, scaleFactor= 1.1, minNeighbors=0, minSize=(20, 20))
 
             # 笑顔が検出された場合
             if len(smiles) > 0:
