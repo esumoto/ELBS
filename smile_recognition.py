@@ -12,8 +12,8 @@ class smileRecognition():
         カメラ画像から笑顔を認識し, 笑顔度に変換するクラス\n
         
     '''
-    face_cascade_dest  = r'C:\Users\tesum\AppData\Local\Programs\Python\Python39\Lib\site-packages\cv2\data\haarcascade_frontalface_default.xml'
-    smile_cascade_dest = r'C:\Users\tesum\AppData\Local\Programs\Python\Python39\Lib\site-packages\cv2\data\haarcascade_smile.xml'
+    face_cascade_dest  = r'C:\Users\tesum\AppData\Local\Programs\Python\Python311\Lib\site-packages\cv2\data\haarcascade_frontalface_default.xml'
+    smile_cascade_dest = r'C:\Users\tesum\AppData\Local\Programs\Python\Python311\Lib\site-packages\cv2\data\haarcascade_smile.xml'
     face_size_px = 80
 
     def __init__(self, camera_num = 0, player = 2, x_res = 640, y_res = 480):
